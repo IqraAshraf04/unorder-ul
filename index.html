@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>document</title>
+</head>
+<body>
+    <!-- <button onclick="displaydate()">The time is?</button> 
+   
+    <script>
+
+        // let a = ["HTML", "CSS", "BOOTSTRAP", "PHP"];
+        // console.log(a)
+        // document.write(a[3]+ "<br>");
+        // a.sort();
+        // document.write(a[2]+ "<br>");
+        // console.log(a)
+
+
+        // let a = [1,4,6,8,10,12];
+        // a.push(2,4);
+        // a.splice(2,3);
+        // console.log(a)
+
+        // let a = [1,4,6,8,10,12];
+        // a.push(2,4);
+        // a.slice(2,3);
+        // console.log(a)
+
+        // let a = [2,4,6,8,10,12,14];
+        // a.unshift("HTML", "CSS");
+        // a.shift(4);
+        // a.pop()
+        // console.log(a)
+
+        // let a = 4;
+        // let b = 7;
+
+        // function add(a,b,){
+        //     alert(a+b);
+        // }
+        // add(4,7,)
+
+        // function arr(){
+        //     let a = ["HTML", "CSS", "BOOTSTRAP", "JAVASCRIPT"];
+        //     a.forEach(Element => {
+        //         document.write(Element);
+        //     })
+        // }
+        // arr();
+        </script> -->
+<!-- <input type="text" id="inp1">
+<input type="text" id="inp2"> -->
+<input type="text" id="todoinput">
+    <button id="btn">Add Me</button>
+    <ul id="unorder">
+
+    </ul>
+
+    <script>
+
+        let input = document.getElementById('todoinput');
+        let btn = document.getElementById('btn');
+        let ul = document.getElementById('unorder');
+        btn.addEventListener('click', function () {
+            let li = document.createElement('li');
+            let todoinput = document.createElement('input');
+            todoinput.setAttribute('type', 'text');
+            todoinput.setAttribute('value',input.value);
+            todoinput.setAttribute('readonly', 'readonly');
+            li.appendChild(todoinput);
+            let edit = document.createElement('button');
+            edit.innerHTML='EDIT';
+            edit.addEventListener('click', function() {
+                edit.innerHTML= 'SAVE';
+                todoinput.removeAttribute('readonly', 'readonly');
+            })
+            let del = document.createElement('button');
+            del.innerHTML='DELETE';
+            del.addEventListener('click', function () {
+                // todoinput.deleteAttribute('readonly', 'readonly');
+                if (edit = del) {
+                    alert("true");
+                } else {
+                    alert("false");
+                };
+            });
+            li.appendChild(del);
+            li.appendChild(edit);
+            ul.appendChild(li);
+            console.log(li);
+        });
+
+       </script>
+       
+   
+    
+     <!-- document.write("javascript")
+        document.write("<h1 class='main'>javascript</h1>")
+        document.write("<h1><div class='background-color: blue';>javascript</h1>") -->
+   
+</body>
+</html>
