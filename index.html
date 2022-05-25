@@ -50,45 +50,56 @@
         </script> -->
 <!-- <input type="text" id="inp1">
 <input type="text" id="inp2"> -->
-<input type="text" id="todoinput">
-    <button id="btn">Add Me</button>
-    <ul id="unorder">
 
-    </ul>
+<input type="text" id="todoinput">
+<button id="btn">Add Me</button>
+<ul id="unorder">
+
+</ul>
 
     <script>
 
-        let input = document.getElementById('todoinput');
+let input = document.getElementById('todoinput');
         let btn = document.getElementById('btn');
         let ul = document.getElementById('unorder');
         btn.addEventListener('click', function () {
             let li = document.createElement('li');
             let todoinput = document.createElement('input');
             todoinput.setAttribute('type', 'text');
-            todoinput.setAttribute('value',input.value);
+            todoinput.setAttribute('value', input.value);
             todoinput.setAttribute('readonly', 'readonly');
             li.appendChild(todoinput);
             let edit = document.createElement('button');
-            edit.innerHTML='EDIT';
-            edit.addEventListener('click', function() {
-                edit.innerHTML= 'SAVE';
-                todoinput.removeAttribute('readonly', 'readonly');
-            })
+            edit.innerHTML = 'EDIT';
             let del = document.createElement('button');
-            del.innerHTML='DELETE';
-            del.addEventListener('click', function () {
-                // todoinput.deleteAttribute('readonly', 'readonly');
-                if (edit = del) {
-                    alert("true");
-                } else {
-                    alert("false");
-                };
-            });
+            del.innerHTML = 'DELETE';
             li.appendChild(del);
             li.appendChild(edit);
             ul.appendChild(li);
+            input.value = '';
             console.log(li);
-        });
+            edit.addEventListener('click', function () {
+                if (edit.innerHTML == 'EDIT') {
+                    todoinput.removeAttribute('readonly', 'readonly');
+                    edit.innerHTML = 'Save';
+                } else {
+                    todoinput.setAttribute('readonly', 'readonly');
+                    edit.innerHTML = 'EDIT';
+                }
+
+            })
+            del.addEventListener('click', function () {
+                let veri = confirm("Are Your Sure");
+                if (veri) {
+                    ul.removeChild(li);
+
+                } else {
+                    alert("No Remove");
+                }
+            })
+
+
+        })
 
        </script>
        
